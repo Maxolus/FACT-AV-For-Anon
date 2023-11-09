@@ -2,7 +2,7 @@
 
 
 
-# MM-Segmentation and InternImage scripts
+# Running FACT-AV locally
 
 
 
@@ -10,12 +10,20 @@
 
 First, the respective projects MM-Segmentation and InternImage must be installed in a Conda environment using the tutorials presented by the developers. Both projects have installation instructions in their documentation, which may differ depending on the system configuration, for this reason, the installation is not described further here.
 
+Additionally, you will need to download the pretrained models listed in the table below from the official MMSegmentation and InternImage Model Zoos in order to use them. These models must then be placed in a folder of your choice; you may need to adjust the paths to the models in the code accordingly.
+
 ## Using this Project
 
-This project includes all the scripts I created for the inference process, plus scripts to change the visualizers to match the color scheme used for our work.
+This project includes all the scripts we created for the inference process, plus scripts to change the visualizers to match the color scheme used for our work.
 
 The two subfolders contain on the one hand a infrence folder, in this infrence folder all inference scripts are contained which are described shortly in the corresponding readme. The visualization folder contains the modified scripts for the visualization.
 
+
+## Webinterface
+
+We also offer a web interface implemented with Gradio in order to use FACT-AV. Therefore, you need to place the corresponding app.py file in the project's directory (MMSegmentation or InternImage).
+
+The app.py will run a local web server hosting a site where you can drag and drop a video in order to receive a segmented video in return. Note that you'll have to execute the app.py within the corresponding Conda environment.
 
 # Used Models and mIoU
 
