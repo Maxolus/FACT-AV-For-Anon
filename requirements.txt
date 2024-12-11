@@ -4,4 +4,4 @@ torch>=2.5.1
 #torch==2.5.1+cu117 or +cu118 or +cu121 or +cu124 # depending on your CUDA version, find out via nvcc -V
 gradio>=5.8.0
 pandas>=2.2.3
-mmsegmentation>=1.2.1
+mmsegmentation>=1.2.2
