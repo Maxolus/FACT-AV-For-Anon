@@ -3,6 +3,70 @@
 
 
 # Web Interface
+------------------------------------------------------------------------
+
+# 🔧 Installation Guide (Verified Working Setup for Windows + GPU)
+
+This installation guide is based on extensive debugging to ensure a
+**stable, GPU-accelerated**, and **Windows-compatible** environment
+without the common MMCV/MMEngine issues such as:
+
+-   `ModuleNotFoundError: mmcv._ext`
+-   NumPy 2.x ABI errors
+-   mmcv/mmseg version conflicts
+
+Follow the steps exactly for a reliable installation.
+
+------------------------------------------------------------------------
+
+## 1️⃣ Create a Clean Conda Environment
+
+``` bash
+conda create -n factav python=3.10 -y
+conda activate factav
+```
+
+------------------------------------------------------------------------
+
+## 2️⃣ Install Compatible NumPy + PyTorch (CUDA 11.8)
+
+``` bash
+pip install numpy==1.26.4
+pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2     --index-url https://download.pytorch.org/whl/cu118
+```
+
+Verify:
+
+``` bash
+python -c "import torch; print(torch.__version__, torch.version.cuda)"
+```
+
+------------------------------------------------------------------------
+
+## 3️⃣ Install OpenMMLab Libraries (IMPORTANT: use openmim)
+
+``` bash
+pip install -U openmim
+mim install "mmengine>=0.7.4,<1.0.0"
+mim install "mmcv==2.1.0"
+mim install "mmsegmentation==1.2.2"
+```
+
+Verify MMCV CUDA extension:
+
+``` bash
+python -c "import mmcv, mmcv._ext; print('MMCV extension loaded correctly')"
+```
+
+------------------------------------------------------------------------
+
+## 4️⃣ Install Project Dependencies
+
+``` bash
+pip install gradio==6.0.2 pandas==2.3.3 ftfy==6.2.3
+```
+
+------------------------------------------------------------------------
 
 ## Requirements
 
