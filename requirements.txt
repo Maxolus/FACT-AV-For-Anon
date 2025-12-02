@@ -1,7 +1,18 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
+# ---- Core Python scientific stack ----
+numpy==1.26.4
 
-torch>=2.5.1
-#torch==2.5.1+cu117 or +cu118 or +cu121 or +cu124 # depending on your CUDA version, find out via nvcc -V
-gradio>=5.8.0
-pandas>=2.2.3
-mmsegmentation>=1.2.2
+# ---- PyTorch GPU stack (CUDA 11.8) ----
+--index-url https://download.pytorch.org/whl/cu118
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+
+# ---- OpenMMLab stack (must be installed using openmim) ----
+mmengine>=0.7.4,<1.0.0
+mmcv==2.1.0
+mmsegmentation==1.2.2
+
+# ---- App dependencies ----
+gradio==6.0.2
+pandas==2.3.3
+ftfy==6.2.3
